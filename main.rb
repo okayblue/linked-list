@@ -56,6 +56,25 @@ class LinkedList
     current.next_node = nil
     popped
   end
+
+  def contains?(value)
+    # returns true if the passed in value is in the list and otherwise returns false.
+    current = @head
+    contain = false
+    until current == nil
+      puts "current value is: #{current.value}"
+      contain = true if current.value == value
+      break if contain == true
+      current = current.next_node
+    end
+    contain
+  end
+
+  def find(value)
+  end
+
+  def to_s
+  end
 end
 
 class Node
@@ -77,4 +96,7 @@ p list
 # puts list.tail.value
 # puts list.head.value
 # list.at(2)
-list.pop
+# list.pop
+# puts list.contains?(444)
+# puts list.contains?(33433)
+# puts list.contains?(44342524)
