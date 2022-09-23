@@ -46,6 +46,16 @@ class LinkedList
     puts current_node.value
     current_node
   end
+  
+  def pop 
+    current = @head
+    until current.next_node.next_node == nil
+      current = current.next_node
+    end
+    popped = current.next_node
+    current.next_node = nil
+    popped
+  end
 end
 
 class Node
@@ -66,4 +76,5 @@ p list
 # list.size
 # puts list.tail.value
 # puts list.head.value
-list.at(2)
+# list.at(2)
+list.pop
