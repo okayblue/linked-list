@@ -21,6 +21,16 @@ class LinkedList
   def prepend(value)
     @head = Node.new(value, @head)
   end
+
+  def size
+    count = 1 # to count head
+    current = @head
+    while current.next_node
+      count += 1
+      current = current.next_node
+    end
+    p count
+  end
 end
 
 class Node
@@ -33,11 +43,9 @@ class Node
 end
 
 list = LinkedList.new
-p list
 list.append(14)
-p list
 list.append(33)
 list.append(33433)
-p list
 list.prepend(444)
 p list
+list.size
