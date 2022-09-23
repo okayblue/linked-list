@@ -35,6 +35,17 @@ class LinkedList
   def head
     @head
   end
+
+  def at(index)
+    current_index = 0
+    current_node = @head
+    until current_index == index
+      current_index += 1
+      current_node = current_node.next_node
+    end
+    puts current_node.value
+    current_node
+  end
 end
 
 class Node
@@ -52,6 +63,7 @@ list.append(33)
 list.append(33433)
 list.prepend(444)
 p list
-list.size
-puts list.tail.value
-puts list.head.value
+# list.size
+# puts list.tail.value
+# puts list.head.value
+list.at(2)
