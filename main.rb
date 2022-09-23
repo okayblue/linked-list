@@ -31,6 +31,10 @@ class LinkedList
     end
     p count
   end
+  
+  def head
+    @head
+  end
 end
 
 class Node
@@ -49,3 +53,5 @@ list.append(33433)
 list.prepend(444)
 p list
 list.size
+puts list.tail.value
+puts list.head.value
