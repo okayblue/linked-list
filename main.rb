@@ -62,7 +62,6 @@ class LinkedList
     current = @head
     contain = false
     until current == nil
-      puts "current value is: #{current.value}"
       contain = true if current.value == value
       break if contain == true
       current = current.next_node
@@ -71,6 +70,14 @@ class LinkedList
   end
 
   def find(value)
+    current = @head
+    index = 0
+    until current.value == value
+      index += 1
+      current = current.next_node
+      break if !current
+    end
+    current ? index : nil
   end
 
   def to_s
@@ -100,3 +107,5 @@ p list
 # puts list.contains?(444)
 # puts list.contains?(33433)
 # puts list.contains?(44342524)
+puts list.find(334323233)
+puts list.find(14)
