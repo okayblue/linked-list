@@ -81,6 +81,14 @@ class LinkedList
   end
 
   def to_s
+    current = @head
+    string = ""
+    while current
+      string << "( #{current.value} ) -> ".chomp
+      current = current.next_node
+    end
+    string << "( nil )"
+    string
   end
 end
 
@@ -98,14 +106,4 @@ list.append(14)
 list.append(33)
 list.append(33433)
 list.prepend(444)
-p list
-# list.size
-# puts list.tail.value
-# puts list.head.value
-# list.at(2)
-# list.pop
-# puts list.contains?(444)
-# puts list.contains?(33433)
-# puts list.contains?(44342524)
-puts list.find(334323233)
-puts list.find(14)
+puts list.to_s
